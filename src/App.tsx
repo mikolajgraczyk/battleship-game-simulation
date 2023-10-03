@@ -10,10 +10,10 @@ interface PlayerState {
 }
 
 function App() {
-  const generateBoard = useGenerateBoard();
+  const placeShips = useGenerateBoard();
   const initializePlayerState = (): PlayerState => {
     return {
-      board: generateBoard(),
+      board: placeShips(),
       destroyed: 0,
     };
   };
