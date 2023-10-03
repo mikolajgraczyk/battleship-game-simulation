@@ -1,8 +1,8 @@
 interface Setup {
-    rows: number;
-    cols: number;
-    ships: number[];
-  }
+  rows: number;
+  cols: number;
+  ships: number[];
+}
 
 export const setup: Setup = {
   rows: 10,

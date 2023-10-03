@@ -20,4 +20,16 @@ export const Cell = styled.td<CellProps>`
     css`
       background-color: black;
     `}
+
+    ${({ state }) =>
+    state === "miss" &&
+    css`
+      background-color: blue;
+    `}
+
+    ${({ state }) =>
+    state === "hit" &&
+    css`
+      background-color: red;
+    `}
 `;

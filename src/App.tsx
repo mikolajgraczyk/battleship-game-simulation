@@ -1,6 +1,5 @@
-import { useState } from "react";
 import Board from "./Board";
-import { useGenerateBoard } from "./useGenerateBoard";
+import { useGameScripts } from "./useGameScripts";
 import { StyledMain } from "./styled";
 
 type Board = string[][];
@@ -10,20 +9,7 @@ interface PlayerState {
 }
 
 function App() {
-  const placeShips = useGenerateBoard();
-  const initializePlayerState = (): PlayerState => {
-    return {
-      board: placeShips(),
-      destroyed: 0,
-    };
-  };
-
-  const [player1State, setPlayer1State] = useState<PlayerState>(
-    initializePlayerState
-  );
-  const [player2State, setPlayer2State] = useState<PlayerState>(
-    initializePlayerState
-  );
+  const { player1State, player2State } = useGameScripts();
 
   return (
     <StyledMain>
