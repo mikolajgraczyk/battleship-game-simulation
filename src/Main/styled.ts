@@ -61,6 +61,7 @@ export const RestartButton = styled.button`
   align-items: center;
   width: 50px;
   height: 50px;
+  color: rgb(40, 40, 40);
   transition: 0.2s;
 
   &:hover{
