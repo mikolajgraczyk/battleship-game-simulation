@@ -1,16 +1,6 @@
 import { setup } from "./setup";
+import { Board, IsValidPosition } from "./interfaces";
 
-type Board = string[][];
-
-interface IsValidPosition {
-  (
-    row: number,
-    col: number,
-    isHorizontal: boolean,
-    shipLength: number,
-    board: Board
-  );
-}
 
 export const useGenerateBoard = (): (() => Board) => {
   const generateBoard = (): Board => {

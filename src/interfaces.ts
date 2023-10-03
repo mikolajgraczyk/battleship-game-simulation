@@ -34,3 +34,17 @@ export interface LastAction {
 export interface CellProps {
   state: string;
 }
+
+export interface IsValidPosition {
+  (
+    row: number,
+    col: number,
+    isHorizontal: boolean,
+    shipLength: number,
+    board: Board
+  );
+}
+export interface RandomMove {
+    rowTarget: number;
+    colTarget: number;
+  }

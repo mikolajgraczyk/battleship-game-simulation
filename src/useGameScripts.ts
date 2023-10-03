@@ -1,24 +1,7 @@
 import { useState, useEffect } from "react";
 import { setup, hitsToWin } from "./setup";
 import { useGenerateBoard } from "./useGenerateBoard";
-
-type Board = string[][];
-
-interface PlayerState {
-  board: Board;
-  destroyed: number;
-}
-
-interface GameState {
-  isPlayer1Turn: boolean;
-  lastAction: string;
-  winner: string;
-}
-
-interface RandomMove {
-  rowTarget: number;
-  colTarget: number;
-}
+import { Board, PlayerState, GameState, RandomMove } from "./interfaces";
 
 const initialGameState: GameState = {
   isPlayer1Turn: true,
