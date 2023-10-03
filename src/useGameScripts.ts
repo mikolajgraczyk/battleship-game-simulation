@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { setup } from "./setup";
+import { setup, hitsToWin } from "./setup";
 import { useGenerateBoard } from "./useGenerateBoard";
 
 type Board = string[][];
@@ -109,6 +109,24 @@ export const useGameScripts = () => {
       );
       togglePlayerTurn();
     }, 100);
+
+    if (player1State.destroyed === hitsToWin) {
+      clearInterval(intervalId);
+      setGameState((prevState) => ({
+        ...prevState,
+        lastAction: "player2Won",
+        winner: "player2",
+      }));
+    }
+
+    if (player2State.destroyed === hitsToWin) {
+      clearInterval(intervalId);
+      setGameState((prevState) => ({
+        ...prevState,
+        lastAction: "player1Won",
+        winner: "player1",
+      }));
+    }
 
     return intervalId;
   };

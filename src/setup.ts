@@ -9,3 +9,8 @@ export const setup: Setup = {
   cols: 10,
   ships: [5, 4, 3, 2, 1],
 };
+
+export const hitsToWin = setup.ships.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
