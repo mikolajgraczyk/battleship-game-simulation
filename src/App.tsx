@@ -3,21 +3,17 @@ import { useGameScripts } from "./useGameScripts";
 import { StyledMain } from "./styled";
 
 type Board = string[][];
-interface PlayerState {
-  board: Board;
-  destroyed: number;
-}
 
 function App() {
-  const { player1State, player2State } = useGameScripts();
+  const { player1State, player2State, gameState } = useGameScripts();
 
   return (
     <StyledMain>
       <div>
-        <Board board={player1State.board} />
+        <Board board={player1State.board} lastAction={gameState.lastAction} />
       </div>
       <div>
-        <Board board={player2State.board} />
+        <Board board={player2State.board} lastAction={gameState.lastAction}/>
       </div>
     </StyledMain>
   );

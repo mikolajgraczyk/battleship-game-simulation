@@ -68,6 +68,11 @@ export const useGameScripts = () => {
     if (prevState.board[rowTarget][colTarget] === "empty") {
       updatedBoard[rowTarget][colTarget] = "miss";
 
+      setGameState(prevState => ({
+        ...prevState,
+        lastAction: "miss",
+      }))
+
       return {
         ...prevState,
         board: updatedBoard,
@@ -76,6 +81,12 @@ export const useGameScripts = () => {
 
     if (prevState.board[rowTarget][colTarget] === "ship") {
       prevState.board[rowTarget][colTarget] = "hit";
+
+      setGameState(prevState => ({
+        ...prevState,
+        lastAction: "hit",
+      }))
+
 
       return {
         ...prevState,
@@ -108,7 +119,7 @@ export const useGameScripts = () => {
         handleShoot(prevState, rowTarget, colTarget)
       );
       togglePlayerTurn();
-    }, 100);
+    }, 1);
 
     if (player1State.destroyed === hitsToWin) {
       clearInterval(intervalId);
@@ -137,5 +148,5 @@ export const useGameScripts = () => {
     return () => clearInterval(intervalId);
   }, [gameState.isPlayer1Turn]);
 
-  return { player1State, player2State };
+  return { player1State, player2State, gameState };
 };

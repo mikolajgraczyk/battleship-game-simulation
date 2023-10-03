@@ -55,21 +55,21 @@ export const useGenerateBoard = (): (() => Board) => {
     board
   ): boolean => {
     if (isHorizontal) {
-      if (startCol + shipLength >= setup.cols) {
+      if (startCol + shipLength > setup.cols) {
         return false;
       }
 
-      for (let i = 0; startCol < i; i++) {
+      for (let i = 0; shipLength > i; i++) {
         if (board[startRow][startCol + i] !== "empty") {
           return false;
         }
       }
     }
-    if (startRow + shipLength >= setup.rows) {
+    if (startRow + shipLength > setup.rows) {
       return false;
     }
 
-    for (let i = 0; startRow < i; i++) {
+    for (let i = 0; shipLength > i; i++) {
       if (board[startRow + i][startCol] !== "empty") {
         return false;
       }
