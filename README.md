@@ -1,6 +1,6 @@
 # Battleship Game Simulation
 
-##[Demo](https://link-url-here.org)
+## [Demo](https://link-url-here.org)
 
 ## Based on the rules of the Battleship board game. A program which randomly places ships on two boards and simulates gameplay between 2 players. I'm planning to develop the program with more ideas in the future.
 
