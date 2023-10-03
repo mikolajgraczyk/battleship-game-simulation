@@ -1,8 +1,4 @@
-interface Setup {
-  rows: number;
-  cols: number;
-  ships: number[];
-}
+import { Setup } from "./interfaces";
 
 export const setup: Setup = {
   rows: 10,

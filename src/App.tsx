@@ -1,29 +1,19 @@
-import Board from "./Board";
+import { createContext } from "react";
 import Header from "./Header";
+import Main from "./Main";
 import { useGameScripts } from "./useGameScripts";
-import { StyledMain } from "./styled";
+import { StateContext } from "./interfaces";
 
-type Board = string[][];
+export const stateContext = createContext<StateContext>();
 
 function App() {
   const { player1State, player2State, gameState } = useGameScripts();
 
   return (
-    <>
-      <Header
-        lastAction={gameState.lastAction}
-        player1State={player1State}
-        player2State={player2State}
-      />
-      <StyledMain lastAction={gameState.lastAction}>
-        <div>
-          <Board board={player1State.board} />
-        </div>
-        <div>
-          <Board board={player2State.board} />
-        </div>
-      </StyledMain>
-    </>
+    <stateContext.Provider value={{ gameState, player1State, player2State }}>
+      <Header />
+      <Main />
+    </stateContext.Provider>
   );
 }
 

@@ -1,9 +1,6 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as HitIcon } from "./HitIcon.svg";
-
-interface CellProps {
-  state: string;
-}
+import { CellProps } from "../interfaces";
 
 export const Cell = styled.td<CellProps>`
   width: 32px;
@@ -15,7 +12,7 @@ export const Cell = styled.td<CellProps>`
     height: 26px;
   }
 
-  @media(max-width: 420px){
+  @media (max-width: 420px) {
     width: 16px;
     height: 16px;
   }
