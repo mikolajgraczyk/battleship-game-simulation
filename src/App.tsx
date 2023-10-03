@@ -8,12 +8,12 @@ function App() {
   const { player1State, player2State, gameState } = useGameScripts();
 
   return (
-    <StyledMain>
+    <StyledMain lastAction={gameState.lastAction}>
       <div>
-        <Board board={player1State.board} lastAction={gameState.lastAction} />
+        <Board board={player1State.board} />
       </div>
       <div>
-        <Board board={player2State.board} lastAction={gameState.lastAction}/>
+        <Board board={player2State.board} />
       </div>
     </StyledMain>
   );

@@ -1,4 +1,4 @@
-import { Cell } from "./styled";
+import { Cell, StyledHitIcon } from "./styled";
 import { generateAlphabetLetter } from "./generateAlphabetLetter";
 
 type Board = string[][];
@@ -23,7 +23,9 @@ const Board: React.FC<BoardProps> = ({ board }) => {
           <tr key={rowIndex}>
             <td>{rowIndex + 1}</td>
             {row.map((col, colIndex) => (
-              <Cell key={colIndex} state={col}></Cell>
+              <Cell key={colIndex} state={col}>
+                {col === "hit" ? <StyledHitIcon /> : ""}
+              </Cell>
             ))}
           </tr>
         ))}

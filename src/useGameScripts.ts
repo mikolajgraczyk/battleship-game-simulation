@@ -119,7 +119,7 @@ export const useGameScripts = () => {
         handleShoot(prevState, rowTarget, colTarget)
       );
       togglePlayerTurn();
-    }, 1);
+    }, 1500);
 
     if (player1State.destroyed === hitsToWin) {
       clearInterval(intervalId);
