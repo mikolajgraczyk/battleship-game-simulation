@@ -10,7 +10,7 @@ export const setup: Setup = {
   ships: [5, 4, 3, 2, 1],
 };
 
-export const hitsToWin = setup.ships.reduce(
+export const hitsToWin: number = setup.ships.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
