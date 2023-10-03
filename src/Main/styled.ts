@@ -4,7 +4,7 @@ import { LastAction } from "../interfaces";
 export const StyledMain = styled.main<LastAction>`
   display: flex;
   flex-direction: row;
-  gap: 100px;
+  gap: 25px;
   justify-content: space-between;
   margin-top: 24px;
   padding: 30px;
@@ -51,4 +51,24 @@ export const StyledMain = styled.main<LastAction>`
         rgba(0, 140, 0, 0.6) 100%
       );
     `}
+`;
+
+export const RestartButton = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  transition: 0.2s;
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  &:active{
+    transform: rotate(180deg);
+  }
 `;

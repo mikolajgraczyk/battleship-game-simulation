@@ -15,6 +15,7 @@ export interface StateContext {
   player1State: PlayerState;
   player2State: PlayerState;
   gameState: GameState;
+  restartGame: () => void;
 }
 
 export interface Setup {

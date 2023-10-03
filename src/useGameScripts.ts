@@ -51,10 +51,10 @@ export const useGameScripts = () => {
     if (prevState.board[rowTarget][colTarget] === "empty") {
       updatedBoard[rowTarget][colTarget] = "miss";
 
-      setGameState(prevState => ({
+      setGameState((prevState) => ({
         ...prevState,
         lastAction: "miss",
-      }))
+      }));
 
       return {
         ...prevState,
@@ -65,11 +65,10 @@ export const useGameScripts = () => {
     if (prevState.board[rowTarget][colTarget] === "ship") {
       prevState.board[rowTarget][colTarget] = "hit";
 
-      setGameState(prevState => ({
+      setGameState((prevState) => ({
         ...prevState,
         lastAction: "hit",
-      }))
-
+      }));
 
       return {
         ...prevState,
@@ -84,6 +83,15 @@ export const useGameScripts = () => {
       ...prevState,
       isPlayer1Turn: !prevState.isPlayer1Turn,
     }));
+  };
+
+  const restartGame = () => {
+    setGameState(initialGameState);
+    setPlayer1State(initializePlayerState);
+    setPlayer2State(initializePlayerState);
+
+    const intervalId = initializeMove();
+    clearInterval(intervalId);
   };
 
   const initializeMove = (): NodeJS.Timer => {
@@ -131,5 +139,5 @@ export const useGameScripts = () => {
     return () => clearInterval(intervalId);
   }, [gameState.isPlayer1Turn]);
 
-  return { player1State, player2State, gameState };
+  return { player1State, player2State, gameState, restartGame };
 };

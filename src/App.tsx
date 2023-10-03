@@ -7,10 +7,10 @@ import { StateContext } from "./interfaces";
 export const stateContext = createContext<StateContext>();
 
 function App() {
-  const { player1State, player2State, gameState } = useGameScripts();
+  const { player1State, player2State, gameState, restartGame } = useGameScripts();
 
   return (
-    <stateContext.Provider value={{ gameState, player1State, player2State }}>
+    <stateContext.Provider value={{ gameState, player1State, player2State, restartGame }}>
       <Header />
       <Main />
     </stateContext.Provider>
