@@ -1,12 +1,7 @@
 import { useState } from "react";
 import Board from "./Board";
+import { useGenerateBoard } from "./useGenerateBoard";
 import { StyledMain } from "./styled";
-
-interface Setup {
-  rows: number;
-  cols: number;
-  ships: number[];
-}
 
 type Board = string[][];
 interface PlayerState {
@@ -14,19 +9,8 @@ interface PlayerState {
   destroyed: number;
 }
 
-const setup: Setup = {
-  rows: 10,
-  cols: 10,
-  ships: [5, 4, 3, 2, 1],
-};
-
 function App() {
-  const generateBoard = (): Board => {
-    return Array(setup.rows)
-      .fill("empty")
-      .map(() => Array(setup.cols).fill("empty"));
-  };
-
+  const generateBoard = useGenerateBoard();
   const initializePlayerState = (): PlayerState => {
     return {
       board: generateBoard(),
@@ -44,10 +28,10 @@ function App() {
   return (
     <StyledMain>
       <div>
-        <Board board={player1State.board}/>
+        <Board board={player1State.board} />
       </div>
       <div>
-        <Board board={player2State.board}/>
+        <Board board={player2State.board} />
       </div>
     </StyledMain>
   );

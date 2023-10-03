@@ -10,10 +10,10 @@ const Board: React.FC<BoardProps> = ({ board }) => {
   return (
     <table>
       <tbody>
-        {board.map((row) => (
-          <tr>
+        {board.map((row, rowIndex) => (
+          <tr key={rowIndex}>
             {row.map((col, colIndex) => (
-              <Cell></Cell>
+              <Cell key={colIndex} state={col}></Cell>
             ))}
           </tr>
         ))}
