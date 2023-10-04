@@ -7,8 +7,8 @@ export interface PlayerState {
 
 export interface GameState {
   isPlayer1Turn: boolean;
-  lastAction: string;
-  winner: string;
+  lastAction: string | null;
+  winner: string | null;
 }
 
 export interface StateContext {
