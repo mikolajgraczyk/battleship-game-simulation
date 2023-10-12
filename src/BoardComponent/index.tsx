@@ -1,3 +1,4 @@
+import React from 'react';
 import { Cell, StyledHitIcon } from "./styled";
 import { generateAlphabetLetter } from "./generateAlphabetLetter";
 
@@ -7,7 +8,7 @@ interface BoardProps {
   board: Board;
 }
 
-const Board: React.FC<BoardProps> = ({ board }) => {
+const BoardComponent: React.FC<BoardProps> = ({ board }) => {
   return (
     <table>
       <thead>
@@ -34,4 +35,4 @@ const Board: React.FC<BoardProps> = ({ board }) => {
   );
 };
 
-export default Board;
+export default BoardComponent;

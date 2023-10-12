@@ -1,5 +1,5 @@
 import { setup } from "./setup";
-import { Board, IsValidPosition } from "./interfaces";
+import { Board } from "./interfaces";
 
 
 export const useGenerateBoard = (): (() => Board) => {
@@ -10,7 +10,7 @@ export const useGenerateBoard = (): (() => Board) => {
   };
 
   const placeShips = (): Board => {
-    let board = generateBoard();
+    const board = generateBoard();
 
     setup.ships.forEach((shipLength) => {
       generateShip(board, shipLength);
@@ -37,12 +37,12 @@ export const useGenerateBoard = (): (() => Board) => {
     }
   };
 
-  const isValidPosition: IsValidPosition = (
-    startRow,
-    startCol,
-    isHorizontal,
-    shipLength,
-    board
+  const isValidPosition = (
+    startRow: number,
+    startCol: number,
+    isHorizontal: boolean,
+    shipLength: number,
+    board: Board,
   ): boolean => {
     if (isHorizontal) {
       if (startCol + shipLength > setup.cols) {

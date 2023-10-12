@@ -1,4 +1,5 @@
-export type Board = string[][];
+export type Board = ("empty" | "hit" | "miss" | "ship")[][];
+export type LastAction = "hit" | "miss" | "player2Won" | "player1Won";
 
 export interface PlayerState {
   board: Board;
@@ -7,8 +8,8 @@ export interface PlayerState {
 
 export interface GameState {
   isPlayer1Turn: boolean;
-  lastAction: string | null;
-  winner: string | null;
+  lastAction: LastAction | null;
+  winner: "player1" | "player2" | null;
 }
 
 export interface StateContext {
@@ -28,24 +29,7 @@ export interface BoardProps {
   board: Board;
 }
 
-export interface LastAction {
-  lastAction: string;
-}
-
-export interface CellProps {
-  state: string;
-}
-
-export interface IsValidPosition {
-  (
-    row: number,
-    col: number,
-    isHorizontal: boolean,
-    shipLength: number,
-    board: Board
-  );
-}
 export interface RandomMove {
-    rowTarget: number;
-    colTarget: number;
-  }
+  rowTarget: number;
+  colTarget: number;
+}

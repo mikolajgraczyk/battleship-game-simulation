@@ -76,6 +76,8 @@ export const useGameScripts = () => {
         destroyed: prevState.destroyed + 1,
       };
     }
+
+    return { ...prevState };
   };
 
   const togglePlayerTurn = (): void => {
