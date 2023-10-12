@@ -68,3 +68,8 @@ export const HeaderSection = styled.div`
     text-align: right;
   }
 `;
+
+export const Info = styled.span`
+  position: absolute;
+  top: 0;
+`;
