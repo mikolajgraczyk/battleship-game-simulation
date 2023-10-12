@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components";
 import { LastAction } from "../interfaces";
 
-export const StyledMain = styled.main<{ lastAction: LastAction }>`
+interface StyledMainProps {
+  lastAction: LastAction | null;
+}
+
+export const StyledMain = styled.main<StyledMainProps>`
   display: flex;
   flex-direction: row;
   gap: 25px;
