@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ReactComponent as HitIcon } from "./HitIcon.svg";
 import { CellProps } from "../interfaces";
 
-export const Cell = styled.td<CellProps>`
+export const Cell = styled.td<{state: CellProps}>`
   width: 32px;
   height: 32px;
   transition: 0.3s;

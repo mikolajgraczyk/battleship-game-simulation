@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { LastAction } from "../interfaces";
 
-export const StyledHeader = styled.header<LastAction>`
+export const StyledHeader = styled.main<{lastAction: LastAction | null}>`
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   justify-content: space-between;

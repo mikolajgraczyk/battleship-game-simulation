@@ -1,8 +1,8 @@
 import React from 'react';
 import { Cell, StyledHitIcon } from "./styled";
 import { generateAlphabetLetter } from "./generateAlphabetLetter";
+import { Board } from '../interfaces';
 
-type Board = string[][];
 
 interface BoardProps {
   board: Board;

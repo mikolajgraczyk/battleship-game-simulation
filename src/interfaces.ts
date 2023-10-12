@@ -1,5 +1,8 @@
 export type Board = ("empty" | "hit" | "miss" | "ship")[][];
+
 export type LastAction = "hit" | "miss" | "player2Won" | "player1Won";
+
+export type CellProps = "hit" | "miss" | "ship" | "empty";
 
 export interface PlayerState {
   board: Board;

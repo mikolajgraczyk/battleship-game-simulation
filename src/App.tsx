@@ -4,7 +4,7 @@ import Main from "./Main";
 import { useGameScripts } from "./useGameScripts";
 import { StateContext } from "./interfaces";
 
-export const stateContext = createContext<StateContext | null>(null);
+export const stateContext = createContext<StateContext>({} as StateContext);
 
 function App() {
   const { player1State, player2State, gameState, restartGame } = useGameScripts();
